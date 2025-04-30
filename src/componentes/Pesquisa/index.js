@@ -55,14 +55,12 @@ function Pesquisa() {
                 const resultado = Livros.filter(livro => livro.nome.toLowerCase().includes(valor))
                 setLivro(resultado)
             }} />
-            <Resultado>
-                {livro.map(livro => (
-                    <div key={livro.id}>
-                        <p>{livro.nome}</p>
-                        <img src={livro.src} alt={livro.alt} />
-                    </div>
-                ))}
-            </Resultado>
+            {livro.map(livro => (
+                <Resultado key={livro.id}>
+                    <img src={livro.src} alt={livro.alt} />
+                    <p>{livro.nome}</p>
+                </Resultado>
+            ))}
         </PesquisaContainer>
     )
 }
